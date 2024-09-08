@@ -10,7 +10,6 @@ import {
   Textarea,
   Checkbox,
 } from "@material-tailwind/react";
-import { FingerPrintIcon, UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle, Footer, Slider } from "@/widgets/layout";
 import { FeatureCard, TeamCard, AmenitieCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData } from "@/data";
@@ -70,9 +69,8 @@ export function Home() {
             ))}
           </div>
 
-          <PageTitle section="Contact Us" heading="Want to work with us?">
-            Complete this form and we will get back to you in 24 hours.
-          </PageTitle>
+          <PageTitle section="Reach Out to Us" heading="Your Next Home Awaits">
+            Whether you're looking for more information or ready to book a room, we're here to help! Get in touch to explore your options and make our PG your home.          </PageTitle>
           <form className="mx-auto w-full mt-12 px-4 lg:px-0 lg:w-5/12">
             <div className="mb-8 flex flex-col gap-2 lg:flex-row lg:gap-4">
               <Input variant="outlined" size="lg" label="Full Name" className="w-full" />
