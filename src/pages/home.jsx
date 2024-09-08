@@ -1,8 +1,5 @@
 import React from "react";
 import {
-  Card,
-  CardBody,
-  CardHeader,
   Typography,
   Button,
   IconButton,
@@ -11,7 +8,7 @@ import {
   Checkbox,
 } from "@material-tailwind/react";
 import { PageTitle, Footer, Slider } from "@/widgets/layout";
-import { FeatureCard, TeamCard, AmenitieCard } from "@/widgets/cards";
+import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData } from "@/data";
 
 
@@ -57,48 +54,44 @@ export function Home() {
         </div>
       </section>
 
-      <section className="px-4 mt-20 pt-10 pb-48">
+      <section className="px-2 mt-20 pb-12">
         <div className="container mx-auto">
           <PageTitle section="Amenities" heading="Your Comfort, Our Priority">
             Experience convenience and comfort with our thoughtfully curated amenities, designed to make your stay worry-free.
           </PageTitle>
 
-          <div className="mx-auto mt-20 mb-40 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mx-auto mt-20 mb-24 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-3 lg:grid-cols-4">
             {amenitiesData.map(({ title, icon, iconColor, shortDescription }) => (
               <AmenitieCard title={title} icon={icon} iconColor={iconColor} description={shortDescription} />
             ))}
           </div>
-
+        </div>
+      </section>
+      <section className="px-2 pt-10 pb-48">
+        <div className="container mx-auto">
           <PageTitle section="Reach Out to Us" heading="Your Next Home Awaits">
-            Whether you're looking for more information or ready to book a room, we're here to help! Get in touch to explore your options and make our PG your home.          </PageTitle>
-          <form className="mx-auto w-full mt-12 px-4 lg:px-0 lg:w-5/12">
-            <div className="mb-8 flex flex-col gap-2 lg:flex-row lg:gap-4">
-              <Input variant="outlined" size="lg" label="Full Name" className="w-full" />
-              <Input variant="outlined" size="lg" label="Email Address" className="w-full" />
+            Whether you're looking for more information or ready to book a room, we're here to help! Get in touch to explore your options and make our PG your home.
+          </PageTitle>
+
+          <div className="mt-1 flex flex-wrap items-center">
+            <div className="mx-auto mt-8 flex w-full justify-center px-2 py-10 md:w-5/12 lg:w-1/2">
+              <MapLocationCard />
             </div>
-            <Textarea variant="outlined" size="lg" label="Message" rows={8} className="w-full" />
-            <Checkbox
-              label={
-                <Typography
-                  variant="small"
-                  color="gray"
-                  className="flex items-center font-normal"
-                >
-                  I agree to the
-                  <a
-                    href="#"
-                    className="font-medium transition-colors hover:text-gray-900"
-                  >
-                    &nbsp;Terms and Conditions
-                  </a>
-                </Typography>
-              }
-              containerProps={{ className: "ml-0 lg:ml-2.5" }}
-            />
-            <Button variant="gradient" size="lg" className="mt-8" fullWidth>
-              Send Message
-            </Button>
-          </form>
+            <div className="mx-auto mt-8 w-full px-4 md:w-5/12 lg:w-1/2">
+              <Typography variant="h2" className="mb-3 font-bold" color="blue">
+                Your Next Home
+              </Typography>
+              <Typography variant="h3" className="mb-3 font-bold" color="blue-gray">
+                Where Comfort Meets Community
+              </Typography>
+              <Typography className="mb-8 font-normal text-blue-gray-500">
+                Welcome to a space that's more than just a place to stay. Our hostel offers a perfect blend of comfort, community, and convenience, giving you a place to live, learn, and grow.
+                <br />
+                With spacious rooms, welcoming common areas, and a vibrant community of like-minded individuals, you'll feel right at home from the moment you step in.
+              </Typography>
+              <Button variant="filled">Contact Us</Button>
+            </div>
+          </div>
 
         </div>
       </section>
