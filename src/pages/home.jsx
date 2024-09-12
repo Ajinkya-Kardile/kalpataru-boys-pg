@@ -5,8 +5,8 @@ import {
   IconButton,
 } from "@material-tailwind/react";
 import { PageTitle, Footer, Slider } from "@/widgets/layout";
-import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard } from "@/widgets/cards";
-import { featuresData, teamData, amenitiesData, roomOptions } from "@/data";
+import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
+import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
 
 
 export function Home() {
@@ -109,6 +109,21 @@ export function Home() {
               </Typography>
               <Button variant="filled">Contact Us</Button>
             </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="px-4 pt-10 pb-48">
+        <div className="container mx-auto">
+          <PageTitle section="Reach Out to Us" heading="Your Next Home Awaits">
+            Need info or ready to book? Contact us to make our PG your home!
+          </PageTitle>
+          <div className="mx-auto mt-10 mb-24 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
+            {testimonialData.map((profileImg, name, message, rating) => (
+              <TestimonialCard profileImg={profileImg} name={name} message={message} rating={rating} />
+
+            ))}
           </div>
 
         </div>
