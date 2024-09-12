@@ -18,11 +18,11 @@ const MapLocationCard = () => {
                     ></iframe>
                 </div>
             </CardBody>
-            <CardBody className="p-4">
+            <CardBody className="p-4 text-center">
                 <Typography variant="h6" color="blue-gray">
                     See Where You'll Stay!
                 </Typography>
-                <Typography color="font-normal text-blue-gray-500">
+                <Typography className="font-normal text-blue-gray-500">
                     Quickly find us on the map and see how close your new living space is!
                 </Typography>
             </CardBody>
