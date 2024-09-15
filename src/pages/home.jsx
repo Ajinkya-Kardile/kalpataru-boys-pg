@@ -3,8 +3,9 @@ import {
   Typography,
   Button,
   IconButton,
+  Carousel,
 } from "@material-tailwind/react";
-import { PageTitle, Footer, Slider } from "@/widgets/layout";
+import { PageTitle, Footer, HomeCarousel } from "@/widgets/layout";
 import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
 
@@ -12,7 +13,7 @@ import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } f
 export function Home() {
   return (
     <>
-      <Slider />
+      <HomeCarousel />
       <section className="-mt-32 bg-white px-4 pb-20 pt-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -58,8 +59,8 @@ export function Home() {
           </PageTitle>
 
           <div className="mx-auto mt-20 mb-24 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-3 lg:grid-cols-4">
-            {amenitiesData.map(({ title, icon, iconColor, shortDescription }) => (
-              <AmenitieCard title={title} icon={icon} iconColor={iconColor} description={shortDescription} />
+            {amenitiesData.map((amenity, index) => (
+              <AmenitieCard key={index} title={amenity.title} icon={amenity.icon} iconColor={amenity.iconColor} description={amenity.shortDescription} />
             ))}
           </div>
         </div>
@@ -116,47 +117,34 @@ export function Home() {
 
       <section className="px-4 pt-10 pb-48">
         <div className="container mx-auto">
-          <PageTitle section="Reach Out to Us" heading="Your Next Home Awaits">
-            Need info or ready to book? Contact us to make our PG your home!
+          <PageTitle section="Testimonials" heading="Hear from Our Residents">
+            Read what our residents have to say about their experience at our PG.
           </PageTitle>
-          <div className="mx-auto mt-10 mb-24 grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-            {testimonialData.map((profileImg, name, message, rating) => (
-              <TestimonialCard profileImg={profileImg} name={name} message={message} rating={rating} />
+          <div className="mx-auto mt-10 mb-24 max-w-5xl">
+            <Carousel
+              autoplay={true}
+              autoplayDelay={3000}
+              loop={true}
+              className="flex justify-center"
+            >
+              {testimonialData.map((testimonial, index) => (
+                <div className="flex justify-center" key={index}>
+                  <TestimonialCard
+                    profileImg={testimonial.profileImg}
+                    name={testimonial.name}
+                    message={testimonial.message}
+                    rating={testimonial.rating}
+                  />
+                </div>
+              ))}
+            </Carousel>
 
-            ))}
           </div>
 
         </div>
       </section>
-      <section className="relative bg-white py-18 px-4">
-        <div className="container mx-auto">
-          <PageTitle section="Our Team" heading="Here are our heroes">
-            According to the National Oceanic and Atmospheric Administration,
-            Ted, Scambos, NSIDClead scentist, puts the potentially record
-            maximum.
-          </PageTitle>
-          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
-            {teamData.map(({ img, name, position, socials }) => (
-              <TeamCard
-                key={name}
-                img={img}
-                name={name}
-                position={position}
-                socials={
-                  <div className="flex items-center gap-2">
-                    {socials.map(({ color, name }) => (
-                      <IconButton key={name} color={color} variant="text">
-                        <i className={`fa-brands text-xl fa-${name}`} />
-                      </IconButton>
-                    ))}
-                  </div>
-                }
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-      <div className="bg-white">
+
+      <div className="bg-gray-300">
         <Footer />
       </div>
     </>

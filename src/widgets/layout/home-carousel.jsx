@@ -2,7 +2,7 @@ import { Carousel } from "@material-tailwind/react";
 import { Typography, Button } from "@material-tailwind/react";
 import { sliderData } from '../../data';
 
-export function Slider() {
+export function HomeCarousel() {
     const slides = sliderData.map((slide, index) => (
         <div key={index} className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
             <div className="absolute top-0 h-full w-full bg-cover bg-center" 
@@ -37,4 +37,4 @@ export function Slider() {
     );
 }
 
-export default Slider;
+export default HomeCarousel;
