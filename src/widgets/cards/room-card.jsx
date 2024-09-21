@@ -3,8 +3,8 @@ import { Card, CardBody, CardFooter, Typography, Button,CardHeader, IconButton }
 
 const RoomCard = ({ image, title, description, price, discount, finalPrice }) => {
   return (
-    <Card className="w-full max-w-sm m-4 shadow-lg">
-      <CardHeader floated={false} color="blue-gray">
+    <Card className="w-full max-w-sm m-4 shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl">
+      <CardHeader floated={false} color="blue-gray" className="mt-4">
         <img className="w-full h-48 object-cover" src={image} alt={title} />
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
         <IconButton

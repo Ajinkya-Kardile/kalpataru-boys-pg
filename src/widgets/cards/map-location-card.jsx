@@ -3,7 +3,7 @@ import { Card, CardBody, Typography } from "@material-tailwind/react";
 
 const MapLocationCard = () => {
     return (
-        <Card className="shadow-lg rounded-lg">
+        <Card className="shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-xl">
             <CardBody className="p-0 rounded-t-lg overflow-hidden">
                 <div className="relative pb-[56.25%]">
                     <iframe

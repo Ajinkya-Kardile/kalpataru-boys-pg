@@ -63,7 +63,7 @@ export function TestimonialCard({ profileImg, name, message, rating }) {
 
   return (
     <>
-    <Card shadow={true} className="w-full max-w-[36rem] mx-auto mb-9 p-0 bg-white border border-gray-400 rounded-lg">
+    <Card shadow={true} className="w-full max-w-[36rem] mx-auto mb-9 p-0 transition-transform transform hover:scale-105 hover:shadow-xl">
       <CardHeader
         color="transparent"
         floated={false}

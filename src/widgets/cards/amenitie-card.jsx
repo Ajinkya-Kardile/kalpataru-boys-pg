@@ -5,7 +5,7 @@ export function AmenitieCard({ title, icon, iconColor, description }) {
     return (
         <Card 
             key={title} 
-            className="w-full max-w-sm sm:max-w-xs md:max-w-md m-4 mx-auto shadow-2xl shadow-gray-600/30" // Responsive width
+            className="w-full max-w-sm sm:max-w-xs md:max-w-md m-4 mx-auto shadow-2xl shadow-gray-600/30 transition-transform transform hover:scale-105 hover:shadow-xl"
         >
             <CardHeader
                 shadow={true}
