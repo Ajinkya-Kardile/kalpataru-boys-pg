@@ -8,7 +8,12 @@ import {
 import { PageTitle, Footer, HomeCarousel } from "@/widgets/layout";
 import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 export function Home() {
   return (
@@ -120,27 +125,47 @@ export function Home() {
           <PageTitle section="Testimonials" heading="Hear from Our Residents">
             Read what our residents have to say about their experience at our PG.
           </PageTitle>
+          {/* <div className="mx-auto mt-10 mb-24 max-w-5xl">
+            <Carousel autoplay={true} autoplayDelay={3000} loop={true} className="flex justify-center">
+              {.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index + 1}
+                  profileImg={testimonial.profileImg}
+                  name={testimonial.name}
+                  message={testimonial.message}
+                  rating={testimonial.rating}
+                />
+              ))}
+            </Carousel>
+          </div> */}
+
           <div className="mx-auto mt-10 mb-24 max-w-5xl">
-            <Carousel
-              autoplay={true}
-              autoplayDelay={3000}
-              loop={true}
-              className="flex justify-center"
+            <Swiper
+              spaceBetween={10}
+              centeredSlides={true}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                dynamicBullets: false,
+              }}
+              modules={[Autoplay, Pagination]}
+              className="mySwiper"
             >
               {testimonialData.map((testimonial, index) => (
-                <div className="flex justify-center" key={index}>
+                <SwiperSlide key={index}>
                   <TestimonialCard
+                    key={index + 1}
                     profileImg={testimonial.profileImg}
                     name={testimonial.name}
                     message={testimonial.message}
                     rating={testimonial.rating}
                   />
-                </div>
+                </SwiperSlide>
               ))}
-            </Carousel>
-
+            </Swiper>
           </div>
-
         </div>
       </section>
 

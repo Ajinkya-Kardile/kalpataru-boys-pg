@@ -62,6 +62,7 @@ export function TestimonialCard({ profileImg, name, message, rating }) {
   const emptyStars = Math.max(5 - fullStars - (hasHalfStar ? 1 : 0), 0); // Ensure no negative array length
 
   return (
+    <>
     <Card shadow={true} className="w-full max-w-[36rem] mx-auto mb-7 p-4 bg-white border border-gray-200 rounded-lg">
       <CardHeader
         color="transparent"
@@ -101,5 +102,6 @@ export function TestimonialCard({ profileImg, name, message, rating }) {
         </div>
       </CardBody>
     </Card>
+    </>
   );
 }
