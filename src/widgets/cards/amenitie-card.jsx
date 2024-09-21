@@ -1,45 +1,29 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Card, Typography } from "@material-tailwind/react";
+import { Card, CardBody, CardHeader, Typography } from "@material-tailwind/react";
 
 export function AmenitieCard({ title, icon, iconColor, description }) {
-    // Use inline style for dynamic background color
-    const iconStyle = {
-        backgroundColor: iconColor,
-    };
-
     return (
-        <Card
-            key={title}
-            color="transparent"
-            shadow={false}
-            className="text-center text-blue-gray-900"
-        >
-            <div
-                className="mx-auto mb-6 grid h-14 w-14 place-items-center rounded-full shadow-lg shadow-gray-500/20"
-                style={iconStyle}
+        <Card key={title} className="m-6 w-96 shadow-2xl shadow-gray-600/30">
+            <CardHeader
+                shadow={true}
+                floated={true}
+                className="mx-auto h-16 w-16 mb-6 grid place-items-center rounded-full shadow-xl shadow-gray-500/40"
             >
-                {React.createElement(icon, {
-                    className: "w-5 h-5 text-white",
-                })}
-            </div>
-            <Typography variant="h5" color="blue-gray" className="mb-2">
-                {title}
-            </Typography>
-            <Typography className="font-normal text-blue-gray-500">
-                {description}
-            </Typography>
+                <div className="h-12 w-12 flex justify-center items-center">
+                    {React.createElement(icon, {
+                        style: { color: iconColor, width: '100%', height: '100%' }, 
+                        className: "h-12 w-12", 
+                    })}
+                </div>
+            </CardHeader>
+            <CardBody>
+                <Typography variant="h5" color="black" className="mb-2">
+                    {title}
+                </Typography>
+                <Typography variant="lead" color="black">
+                    {description}
+                </Typography>
+            </CardBody>
         </Card>
     );
 }
-
-AmenitieCard.propTypes = {
-    title: PropTypes.string.isRequired,
-    icon: PropTypes.elementType.isRequired, // Change to elementType for icons
-    iconColor: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-};
-
-AmenitieCard.displayName = "/src/widgets/layout/amenitie-card.jsx";
-
-export default AmenitieCard;

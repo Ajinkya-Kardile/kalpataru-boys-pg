@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-export function Navbar({ brandName, routes, action }) {
+export function Navbar({ brandName, routes }) {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -80,11 +80,11 @@ export function Navbar({ brandName, routes, action }) {
         <div className="hidden lg:block">{navList}</div>
         <div className="hidden gap-2 lg:flex">
           <Link
-            to="/sign-in"
+            to="/home"
             target=""
           >
             <Button variant="gradient" size="sm" color="white" fullWidth>
-              Register / Login
+            Inquire Now
             </Button>
           </Link>
         </div>
@@ -106,16 +106,13 @@ export function Navbar({ brandName, routes, action }) {
         <div className="rounded-xl bg-white px-4 pt-2 pb-4 text-blue-gray-900">
           {navList}
           <Link
-            to="/sign-in"
+            to="/home"
             target=""
           >
-            <Button variant="gradient" size="sm" color="white" fullWidth>
-              Login
+            <Button variant="gradient" size="sm" fullWidth>
+            Inquire Now
             </Button>
           </Link>
-          {React.cloneElement(action, {
-            className: "w-full block",
-          })}
         </div>
       </Collapse>
     </NAVBAR>
@@ -124,22 +121,11 @@ export function Navbar({ brandName, routes, action }) {
 
 Navbar.defaultProps = {
   brandName: "Kalpataru Boy's PG",
-  action: (
-    <a
-      href="https://www.creative-tim.com/product/material-tailwind-kit-react"
-      target="_blank"
-    >
-      <Button variant="gradient" size="sm" fullWidth>
-        free download
-      </Button>
-    </a>
-  ),
 };
 
 Navbar.propTypes = {
   brandName: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
-  action: PropTypes.node,
 };
 
 Navbar.displayName = "/src/widgets/layout/navbar.jsx";

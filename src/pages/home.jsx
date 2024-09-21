@@ -6,7 +6,7 @@ import {
   Carousel,
 } from "@material-tailwind/react";
 import { PageTitle, Footer, HomeCarousel } from "@/widgets/layout";
-import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
+import { FeatureCard, TeamCard, AmenitieCardSm, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation,EffectCards } from 'swiper/modules';
@@ -65,7 +65,7 @@ export function Home() {
 
           <div className="mx-auto mt-20 mb-24 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-3 lg:grid-cols-4">
             {amenitiesData.map((amenity, index) => (
-              <AmenitieCard key={index} title={amenity.title} icon={amenity.icon} iconColor={amenity.iconColor} description={amenity.shortDescription} />
+              <AmenitieCardSm key={index} title={amenity.title} icon={amenity.icon} iconColor={amenity.iconColor} description={amenity.shortDescription} />
             ))}
           </div>
         </div>
