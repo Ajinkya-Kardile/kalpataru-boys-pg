@@ -9,7 +9,7 @@ import { PageTitle, Footer, HomeCarousel } from "@/widgets/layout";
 import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation,EffectCards } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -120,38 +120,25 @@ export function Home() {
         </div>
       </section>
 
-      <section className="px-4 pt-10 pb-48">
+      <section className="px-4 mt-5 pb-15">
         <div className="container mx-auto">
           <PageTitle section="Testimonials" heading="Hear from Our Residents">
             Read what our residents have to say about their experience at our PG.
           </PageTitle>
-          {/* <div className="mx-auto mt-10 mb-24 max-w-5xl">
-            <Carousel autoplay={true} autoplayDelay={3000} loop={true} className="flex justify-center">
-              {.map((testimonial, index) => (
-                <TestimonialCard
-                  key={index + 1}
-                  profileImg={testimonial.profileImg}
-                  name={testimonial.name}
-                  message={testimonial.message}
-                  rating={testimonial.rating}
-                />
-              ))}
-            </Carousel>
-          </div> */}
-
           <div className="mx-auto mt-10 mb-24 max-w-5xl">
             <Swiper
               spaceBetween={10}
               centeredSlides={true}
               autoplay={{
-                delay: 2500,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               pagination={{
-                dynamicBullets: false,
+                dynamicBullets: true,
               }}
               modules={[Autoplay, Pagination]}
               className="mySwiper"
+              loop={true}
             >
               {testimonialData.map((testimonial, index) => (
                 <SwiperSlide key={index}>

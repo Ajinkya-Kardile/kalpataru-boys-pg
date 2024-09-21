@@ -63,12 +63,12 @@ export function TestimonialCard({ profileImg, name, message, rating }) {
 
   return (
     <>
-    <Card shadow={true} className="w-full max-w-[36rem] mx-auto mb-7 p-4 bg-white border border-gray-200 rounded-lg">
+    <Card shadow={true} className="w-full max-w-[36rem] mx-auto mb-9 p-0 bg-white border border-gray-400 rounded-lg">
       <CardHeader
         color="transparent"
         floated={false}
         shadow={false}
-        className="flex items-center gap-4 mb-4"
+        className="flex items-center gap-4"
       >
         <Avatar size="md" variant="circular" src={profileImg} alt={name} />
         <div className="flex flex-col">
@@ -94,11 +94,10 @@ export function TestimonialCard({ profileImg, name, message, rating }) {
         </div>
       </CardHeader>
       <CardBody className="relative p-4 text-sm text-blue-gray-800">
-        <div className="relative bg-blue-50 p-4 rounded-lg shadow-md">
-          <Typography variant="lead" className="text-blue-gray-900">
+        <div className="relative bg-blue-50 p-2 rounded-lg shadow-md">
+          <Typography variant="h6" className="text-blue-gray-900">
             &quot;{message}&quot;
           </Typography>
-          <div className="absolute bottom-0 left-0 w-0 h-0 border-t-8 border-t-blue-50 border-l-8 border-l-transparent border-r-8 border-r-transparent"></div>
         </div>
       </CardBody>
     </Card>
