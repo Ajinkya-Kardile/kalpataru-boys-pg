@@ -5,7 +5,7 @@ import {
   IconButton,
   Carousel,
 } from "@material-tailwind/react";
-import { PageTitle, Footer, HomeCarousel } from "@/widgets/layout";
+import { PageTitle, Footer, HomeCarousel, ScrollAnimation } from "@/widgets/layout";
 import { FeatureCard, TeamCard, AmenitieCardSm, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
 import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
 import { Swiper, SwiperSlide } from 'swiper/react';

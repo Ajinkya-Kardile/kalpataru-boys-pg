@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 import { Typography } from "@material-tailwind/react";
+import {ScrollAnimation} from "@/widgets/layout"
 
 export function PageTitle({ section, heading, children }) {
   return (
+    <ScrollAnimation>
+
     <div className="mx-auto w-full px-4 text-center lg:w-6/12">
       <Typography variant="lead" className="font-semibold uppercase" color="blue">{section}</Typography>
       <div className="w-20 h-[1px] mx-auto my-1 bg-red-500 rounded"></div>
@@ -13,6 +16,8 @@ export function PageTitle({ section, heading, children }) {
         {children}
       </Typography>
     </div>
+    </ScrollAnimation>
+
   );
 }
 

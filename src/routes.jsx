@@ -21,11 +21,11 @@ export const routes = [
     path: "/home",
     element: <Home />,
   },
-  {
-    name: "profile",
-    path: "/profile",
-    element: <Profile />,
-  },
+  // {
+  //   name: "profile",
+  //   path: "/profile",
+  //   element: <Profile />,
+  // },
   // {
   //   name: "Sign In",
   //   path: "/sign-in",
