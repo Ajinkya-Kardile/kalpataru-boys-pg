@@ -1,13 +1,10 @@
 import React from "react";
 import {
     Typography,
-    Button,
-    IconButton,
-    Carousel,
 } from "@material-tailwind/react";
-import { PageTitle, Footer, HomeCarousel,ScrollAnimation } from "@/widgets/layout";
-import { FeatureCard, TeamCard, AmenitieCard, MapLocationCard, RoomCard, TestimonialCard } from "@/widgets/cards";
-import { featuresData, teamData, amenitiesData, roomOptions, testimonialData } from "@/data";
+import { Footer,ScrollAnimation } from "@/widgets/layout";
+import { AmenitieCard } from "@/widgets/cards";
+import { amenitiesData} from "@/data";
 
 export function Amenities() {
     return (

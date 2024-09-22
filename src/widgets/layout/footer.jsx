@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import { Typography, IconButton } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
+import routes from "@/routes";
 
 const year = new Date().getFullYear();
 
@@ -43,7 +45,7 @@ export function Footer({ title, description, socials, menus, copyright }) {
                   {name}
                 </Typography>
                 <ul className="mt-3">
-                  {items.map((item) => (
+                  {/* {items.map((item) => (
                     <li key={item.name}>
                       <Typography
                         as="a"
@@ -56,6 +58,42 @@ export function Footer({ title, description, socials, menus, copyright }) {
                         {item.name}
                       </Typography>
                     </li>
+                  ))} */}
+
+                  {routes.map(({ name, path, icon, href, target }) => (
+                    <Typography
+                      key={name}
+                      as="li"
+                      variant="small"
+                      color="inherit"
+                      className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
+                    >
+                      {href ? (
+                        <a
+                          href={href}
+                          target={target}
+                          className="flex items-center gap-1 p-1 font-bold"
+                        >
+                          {icon &&
+                            React.createElement(icon, {
+                              className: "w-[18px] h-[18px] opacity-75 mr-1",
+                            })}
+                          {name}
+                        </a>
+                      ) : (
+                        <Link
+                          to={path}
+                          target={target}
+                          className="flex items-center gap-1 p-1"
+                        >
+                          {icon &&
+                            React.createElement(icon, {
+                              className: "w-[18px] h-[18px] opacity-75 mr-1",
+                            })}
+                          {name}
+                        </Link>
+                      )}
+                    </Typography>
                   ))}
                 </ul>
               </div>
@@ -103,11 +141,11 @@ Footer.defaultProps = {
     {
       name: "useful links",
       items: [
-        { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-        { name: "Blog", path: "https://www.creative-tim.com/blog" },
+        { name: "About Us", path: "https://kalpatarupg.vercel.app/home" },
+        { name: "Blog", path: "https://kalpatarupg.vercel.app/home" },
         {
           name: "Contact Us",
-          path: "https://www.github.com/creativetimofficial/material-tailwind?ref=mtk",
+          path: "https://kalpatarupg.vercel.app/home",
         },
       ],
     },
